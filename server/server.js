@@ -1,11 +1,10 @@
 const {format} = require('util');
 const express = require('express');
 const Multer = require('multer');
-const sharp = require('sharp');
 
 const {Storage} = require('@google-cloud/storage');
 
-let keyFilename = "mykey.json";
+let keyFilename = "mykey.json"; // replace with the path to your key file
 // Instantiate a storage client
 const storage = new Storage({ keyFilename });
 
@@ -22,7 +21,7 @@ const multer = Multer({
 });
 
 // A bucket is a container for objects (files).
-const bucket = storage.bucket("project3-inc");
+const bucket = storage.bucket("BUCKET_NAME");
 
 
 // Process the file upload and upload to Google Cloud Storage.
